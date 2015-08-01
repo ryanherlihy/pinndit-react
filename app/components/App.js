@@ -34,12 +34,13 @@ class App extends Component {
       canvas: {
         height: '85%',
         width: '100%'
-      }
+      },
     }
     return (
       <div style={style.canvas}>
         <header>
           <h1>Map</h1>
+          <img />
         </header>
         <Map />
         <CreateEvent
@@ -47,7 +48,7 @@ class App extends Component {
         <Event
           name={this.state.openPinn.eventName}
           desc={this.state.openPinn.eventDesc} />
-        <footer className='lead'>
+        <footer className='lead' style={style.footer}>
           Footer
         </footer>
       </div>
