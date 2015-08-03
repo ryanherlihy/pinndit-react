@@ -62,8 +62,7 @@ class Map extends Component {
     $('#create-event').on('hide.bs.modal', () => {
       console.log(this.state.newEventSubmitted);
       if (!this.state.newEventSubmitted) {
-        marker.setMap(null);
-        marker = null;
+        deleteMarker(marker);
       } else {
         PinnActions.updateNewEventSubmitted();
       }
@@ -75,12 +74,18 @@ class Map extends Component {
     })
   }
 
+  deleteMarker(marker) {
+    marker.setMap(null);
+    marker = null;
+  }
+
   centerMapView(center) {
     this.map.panTo(center);
     this.map.setZoom(15);
   }
 
   render() {
+    console.log(this.state);
     return (
       <div id='map-canvas' style={this.props.style}>
       </div>

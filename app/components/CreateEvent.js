@@ -27,7 +27,7 @@ class CreateEvent extends Component {
     };
     PinnActions.createNewEvent(newEventData);
     PinnActions.updateNewEventSubmitted();
-    $('#create-event').modal('hide');
+    // $('#create-event').modal('hide');
   }
 
   render() {

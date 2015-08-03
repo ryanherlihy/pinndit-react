@@ -39,6 +39,7 @@ class PinnStore {
 
   onUpdateNewEventSubmitted() {
     this.newEventSubmitted = !this.newEventSubmitted;
+    $('#create-event').modal('hide');
   }
 }
 
