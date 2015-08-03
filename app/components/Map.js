@@ -59,6 +59,16 @@ class Map extends Component {
     PinnActions.updateNewPinnCoords(coords);
     $('#create-event').modal('show');
 
+    $('#create-event').on('hide.bs.modal', () => {
+      console.log(this.state.newEventSubmitted);
+      if (!this.state.newEventSubmitted) {
+        marker.setMap(null);
+        marker = null;
+      } else {
+        PinnActions.updateNewEventSubmitted();
+      }
+    });
+
     google.maps.event.addListener(marker, 'click', () => {
       PinnActions.updateOpenPinn(coords);
       $('#event').modal('show');
@@ -71,14 +81,8 @@ class Map extends Component {
   }
 
   render() {
-    let style = {
-      canvas: {
-        height: '100%',
-        width: '100%'
-      }
-    }
     return (
-      <div id='map-canvas' style={style.canvas}>
+      <div id='map-canvas' style={this.props.style}>
       </div>
     )
   }

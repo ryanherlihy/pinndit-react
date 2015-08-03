@@ -8,10 +8,12 @@ class PinnStore {
     this.bindListeners({
       onCreateNewEvent: PinnActions.CREATE_NEW_EVENT,
       onUpdateNewPinnCoords: PinnActions.UPDATE_NEW_PINN_COORDS,
-      onUpdateOpenPinn: PinnActions.UPDATE_OPEN_PINN
+      onUpdateOpenPinn: PinnActions.UPDATE_OPEN_PINN,
+      onUpdateNewEventSubmitted: PinnActions.UPDATE_NEW_EVENT_SUBMITTED
     });
     this.pinns = [];
     this.newPinnCoords;
+    this.newEventSubmitted = false;
     this.openPinn = {
       eventName: '',
       eventDesc: ''
@@ -33,6 +35,10 @@ class PinnStore {
     this.openPinn = this.pinns.filter((pinn) => {
       return (pinn.eventCoords === coords);
     })[0];
+  }
+
+  onUpdateNewEventSubmitted() {
+    this.newEventSubmitted = !this.newEventSubmitted;
   }
 }
 

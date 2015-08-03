@@ -31,18 +31,29 @@ class App extends Component {
 
   render() {
     let style = {
+      header: {
+        height: '10%',
+        backgroundColor: '#565050'
+      },
       canvas: {
+        height: '100%',
+        width: '100%'
+      },
+      map: {
         height: '85%',
         width: '100%'
       },
+      footer: {
+        height: '5%',
+        backgroundColor: '#E84C3D'
+      }
     }
     return (
       <div style={style.canvas}>
-        <header>
-          <h1>Map</h1>
-          <img />
+        <header style={style.header}>
+          <img src={'../images/pinnditLogo.png'} />
         </header>
-        <Map />
+        <Map style={style.map}/>
         <CreateEvent
           coords={this.state.newPinnCoords} />
         <Event

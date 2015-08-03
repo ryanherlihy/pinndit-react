@@ -4,7 +4,7 @@ import alt from '../alt';
 
 class PinnActions {
   constructor() {
-    
+
   }
 
   updateNewPinnCoords(coords) {
@@ -17,6 +17,10 @@ class PinnActions {
 
   updateOpenPinn(coords) {
     this.dispatch(coords);
+  }
+
+  updateNewEventSubmitted() {
+    this.dispatch();
   }
 }
 
