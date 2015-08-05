@@ -7,7 +7,7 @@ class PinnActions {
 
   }
 
-  updateNewPinnCoords(coords) {
+  newPinnDropped(coords) {
     this.dispatch(coords);
   }
 
@@ -22,6 +22,11 @@ class PinnActions {
   updateNewEventSubmitted() {
     this.dispatch();
   }
+
+  closeWindow() {
+    this.dispatch();
+  }
+
 }
 
 export default alt.createActions(PinnActions);

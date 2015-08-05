@@ -4,6 +4,9 @@ import React from 'react';
 import Map from './Map';
 import CreateEvent from './CreateEvent';
 import Event from './Event';
+import TestWindow from './TestWindow';
+import Overlay from './Overlay';
+
 import PinnStore from '../stores/PinnStore';
 
 const {
@@ -54,11 +57,15 @@ class App extends Component {
           <img src={'../images/pinnditLogo.png'} />
         </header>
         <Map style={style.map}/>
+        <Overlay
+          visible={this.state.overlayVisible} />
         <CreateEvent
-          coords={this.state.newPinnCoords} />
+          coords={this.state.newPinnCoords}
+          open={this.state.newEventModalOpen} />
         <Event
           name={this.state.openPinn.eventName}
-          desc={this.state.openPinn.eventDesc} />
+          desc={this.state.openPinn.eventDesc}
+          open={this.state.eventModalOpen} />
         <footer className='lead' style={style.footer}>
           Footer
         </footer>

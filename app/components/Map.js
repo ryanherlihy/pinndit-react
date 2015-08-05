@@ -18,6 +18,7 @@ class Map extends Component {
 
     this.initialize = this.initialize.bind(this);
     this.addMarker = this.addMarker.bind(this);
+    this.deleteMarker = this.deleteMarker.bind(this);
     this.centerMapView = this.centerMapView.bind(this);
   }
 
@@ -56,21 +57,10 @@ class Map extends Component {
     });
 
     this.centerMapView(coords);
-    PinnActions.updateNewPinnCoords(coords);
-    $('#create-event').modal('show');
-
-    $('#create-event').on('hide.bs.modal', () => {
-      console.log(this.state.newEventSubmitted);
-      if (!this.state.newEventSubmitted) {
-        deleteMarker(marker);
-      } else {
-        PinnActions.updateNewEventSubmitted();
-      }
-    });
+    PinnActions.newPinnDropped(coords);
 
     google.maps.event.addListener(marker, 'click', () => {
       PinnActions.updateOpenPinn(coords);
-      $('#event').modal('show');
     })
   }
 

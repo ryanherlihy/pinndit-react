@@ -7,13 +7,17 @@ class PinnStore {
   constructor() {
     this.bindListeners({
       onCreateNewEvent: PinnActions.CREATE_NEW_EVENT,
-      onUpdateNewPinnCoords: PinnActions.UPDATE_NEW_PINN_COORDS,
       onUpdateOpenPinn: PinnActions.UPDATE_OPEN_PINN,
-      onUpdateNewEventSubmitted: PinnActions.UPDATE_NEW_EVENT_SUBMITTED
+      onUpdateNewEventSubmitted: PinnActions.UPDATE_NEW_EVENT_SUBMITTED,
+      onNewPinnDropped: PinnActions.NEW_PINN_DROPPED,
+      onCloseWindow: PinnActions.CLOSE_WINDOW
     });
     this.pinns = [];
     this.newPinnCoords;
     this.newEventSubmitted = false;
+    this.newEventModalOpen = false;
+    this.eventModalOpen = false;
+    this.overlayVisible = false;
     this.openPinn = {
       eventName: '',
       eventDesc: ''
@@ -24,7 +28,14 @@ class PinnStore {
   onCreateNewEvent(eventData) {
     eventData.id = this.maxId + 1;
     this.pinns.push(eventData);
-    console.log(this.pinns);
+    this.overlayVisible = false;
+    this.newEventModalOpen = false;
+  }
+
+  onNewPinnDropped(coords) {
+    this.newPinnCoords = coords;
+    this.overlayVisible = true;
+    this.newEventModalOpen = true;
   }
 
   onUpdateNewPinnCoords(coords) {
@@ -35,11 +46,18 @@ class PinnStore {
     this.openPinn = this.pinns.filter((pinn) => {
       return (pinn.eventCoords === coords);
     })[0];
+    this.overlayVisible = true;
+    this.eventModalOpen = true;
   }
 
   onUpdateNewEventSubmitted() {
     this.newEventSubmitted = !this.newEventSubmitted;
-    $('#create-event').modal('hide');
+  }
+
+  onCloseWindow() {
+    this.newEventModalOpen = false;
+    this.eventModalOpen = false;
+    this.overlayVisible = false;
   }
 }
 

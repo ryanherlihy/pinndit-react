@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import TestWindow from './TestWindow';
 import PinnStore from '../stores/PinnStore';
 import PinnActions from '../actions/PinnActions';
 
@@ -15,25 +16,19 @@ class Event extends Component {
   }
 
   render() {
-    return (
-      <div className='modal fade' id='event'>
-        <div className='modal-dialog'>
-          <div className='modal-content'>
-            <div className='modal-header lead'>
-              {this.props.name}
-            </div>
-            <div className='modal-body'>
-              <div className='container-fluid'>
-                <div className='row'>
-                  <p className='lead'>Event Description</p>
-                  <hr></hr>
-                  {this.props.desc}
-                </div>
-              </div>
-            </div>
-          </div>
+    let content =
+      <div className='container-fluid'>
+        <div className='row'>
+          <p className='lead'>Event Description</p>
+          <hr></hr>
+          {this.props.desc}
         </div>
-      </div>
+      </div>;
+    return (
+      <TestWindow
+        open={this.props.open}
+        content={content}
+        heading={this.props.name} />
     );
   }
 }

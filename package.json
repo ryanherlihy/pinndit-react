@@ -16,6 +16,7 @@
     "es6-loader": "^0.2.0",
     "file-loader": "^0.8.4",
     "react-hot-loader": "^1.2.8",
+    "react-modal": "^0.3.0",
     "react-router": "^0.13.3",
     "webpack": "^1.10.5",
     "webpack-dev-server": "^1.10.1"
