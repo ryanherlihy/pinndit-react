@@ -33,30 +33,12 @@ class App extends Component {
   }
 
   render() {
-    let style = {
-      header: {
-        height: '10%',
-        backgroundColor: '#565050'
-      },
-      canvas: {
-        height: '100%',
-        width: '100%'
-      },
-      map: {
-        height: '85%',
-        width: '100%'
-      },
-      footer: {
-        height: '5%',
-        backgroundColor: '#E84C3D'
-      }
-    }
     return (
-      <div style={style.canvas}>
-        <header style={style.header}>
-          <img src={'../images/pinnditLogo.png'} />
+      <div id='app'>
+        <header>
+          <img src='../app/images/pinnditLogo.png' />
         </header>
-        <Map style={style.map}/>
+        <Map />
         <Overlay
           visible={this.state.overlayVisible} />
         <CreateEvent
@@ -66,9 +48,6 @@ class App extends Component {
           name={this.state.openPinn.eventData.eventName}
           desc={this.state.openPinn.eventData.eventDesc}
           open={this.state.eventModalOpen} />
-        <footer className='lead' style={style.footer}>
-          Footer
-        </footer>
       </div>
     );
   }

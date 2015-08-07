@@ -59,22 +59,10 @@ class Map extends Component {
     this.centerMapView(coords);
     PinnActions.newPinnDropped(marker);
 
-    // PinnStore.listen((pinnData) => {
-    //   if (!pinnData.newEventSubmitted && !pinnData.newEventModalOpen) {
-    //     this.deleteMarker(marker);
-    //     PinnStore.unlisten(() => {
-    //       console.log('unlistened');
-    //     });
-    //   } else {
-    //     PinnActions.updateNewEventSubmitted();
-    //   }
-    // });
-
     google.maps.event.addListener(marker, 'click', () => {
       this.centerMapView(coords);
       PinnActions.updateOpenPinn(marker);
     })
-
   }
 
   deleteMarker(marker) {
@@ -88,9 +76,9 @@ class Map extends Component {
   }
 
   render() {
-    console.log(this.state);
     return (
-      <div id='map-canvas' style={this.props.style}>
+      <div
+        id='map-canvas' >
       </div>
     )
   }
