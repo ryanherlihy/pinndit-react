@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import Router from 'react-router';
 import CreateEvent from './CreateEvent';
 import PinnStore from '../stores/PinnStore';
 import PinnActions from '../actions/PinnActions';

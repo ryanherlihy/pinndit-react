@@ -24,7 +24,6 @@ class TestWindow extends Component {
         left: '25%',
         width: '50%',
         boxShadow: '0px 5px 5px grey',
-        display: this.toggleWindow(),
         zIndex: 5
       }
     };
