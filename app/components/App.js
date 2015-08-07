@@ -35,9 +35,6 @@ class App extends Component {
   render() {
     return (
       <div id='app'>
-        <header>
-          <img src='../app/images/pinnditLogo.png' />
-        </header>
         <Map />
         <Overlay
           visible={this.state.overlayVisible} />

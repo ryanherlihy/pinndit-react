@@ -36,7 +36,9 @@ class Overlay extends Component {
       }
     }
     return (
-      <div style={styles.overlay} onClick={this.handleCloseWindow}></div>
+      <div 
+        style={styles.overlay}
+        onClick={this.handleCloseWindow}></div>
     );
   }
 }

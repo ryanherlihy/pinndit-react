@@ -3,11 +3,17 @@ body {
   background-color: #565050;
   padding-left: 5%;
   padding-right: 5%;
+  padding-top: 5%;
+}
+
+header {
+  background-color: #565050;
+  height: 5%;
 }
 
 footer{
-    color: #FFFFFF;
-    font-size: smaller;
+  color: #000000;
+  font-size: smaller;
 }
 
 html, body, #app {
@@ -15,9 +21,6 @@ html, body, #app {
 }
 
 #map-canvas {
-    height: 90%;
-}
-
-#map-canvas{
-    border-radius: 5px; padding-left: 5%; padding-right: 5%;
+  height: 90%;
+  border-radius: 5px;
 }
