@@ -57,11 +57,24 @@ class Map extends Component {
     });
 
     this.centerMapView(coords);
-    PinnActions.newPinnDropped(coords);
+    PinnActions.newPinnDropped(marker);
+
+    // PinnStore.listen((pinnData) => {
+    //   if (!pinnData.newEventSubmitted && !pinnData.newEventModalOpen) {
+    //     this.deleteMarker(marker);
+    //     PinnStore.unlisten(() => {
+    //       console.log('unlistened');
+    //     });
+    //   } else {
+    //     PinnActions.updateNewEventSubmitted();
+    //   }
+    // });
 
     google.maps.event.addListener(marker, 'click', () => {
-      PinnActions.updateOpenPinn(coords);
+      this.centerMapView(coords);
+      PinnActions.updateOpenPinn(marker);
     })
+
   }
 
   deleteMarker(marker) {

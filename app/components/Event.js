@@ -12,7 +12,10 @@ const {
 class Event extends Component {
   constructor(props) {
     super(props);
+  }
 
+  componentWillReceiveProps(props) {
+    console.log(props);
   }
 
   render() {
@@ -31,6 +34,11 @@ class Event extends Component {
         heading={this.props.name} />
     );
   }
+}
+
+Event.defaultProps = {
+  desc: '',
+  name: ''
 }
 
 export default Event;

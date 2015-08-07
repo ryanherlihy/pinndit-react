@@ -7,16 +7,16 @@ class PinnActions {
 
   }
 
-  newPinnDropped(coords) {
-    this.dispatch(coords);
+  newPinnDropped(marker) {
+    this.dispatch(marker);
   }
 
   createNewEvent(eventData) {
     this.dispatch(eventData);
   }
 
-  updateOpenPinn(coords) {
-    this.dispatch(coords);
+  updateOpenPinn(marker) {
+    this.dispatch(marker);
   }
 
   updateNewEventSubmitted() {

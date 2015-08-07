@@ -10,30 +10,35 @@ class PinnStore {
       onUpdateOpenPinn: PinnActions.UPDATE_OPEN_PINN,
       onUpdateNewEventSubmitted: PinnActions.UPDATE_NEW_EVENT_SUBMITTED,
       onNewPinnDropped: PinnActions.NEW_PINN_DROPPED,
-      onCloseWindow: PinnActions.CLOSE_WINDOW
+      onCloseWindow: PinnActions.CLOSE_WINDOW,
     });
     this.pinns = [];
     this.newPinnCoords;
+    this.newPinn;
     this.newEventSubmitted = false;
     this.newEventModalOpen = false;
     this.eventModalOpen = false;
     this.overlayVisible = false;
     this.openPinn = {
-      eventName: '',
-      eventDesc: ''
+      eventData: {
+        eventName: '',
+        eventDesc: ''
+      }
     };
-    this.maxId = 0;
   }
 
   onCreateNewEvent(eventData) {
-    eventData.id = this.maxId + 1;
-    this.pinns.push(eventData);
+    this.newPinn.eventData = eventData;
+    this.pinns.push(this.newPinn);
+    this.newPinn = null;
     this.overlayVisible = false;
     this.newEventModalOpen = false;
+    this.onUpdateNewEventSubmitted();
   }
 
-  onNewPinnDropped(coords) {
-    this.newPinnCoords = coords;
+  onNewPinnDropped(marker) {
+    this.newPinnCoords = marker.getPosition();
+    this.newPinn = marker;
     this.overlayVisible = true;
     this.newEventModalOpen = true;
   }
@@ -42,10 +47,8 @@ class PinnStore {
     this.newPinnCoords = coords;
   }
 
-  onUpdateOpenPinn(coords) {
-    this.openPinn = this.pinns.filter((pinn) => {
-      return (pinn.eventCoords === coords);
-    })[0];
+  onUpdateOpenPinn(marker) {
+    this.openPinn = marker;
     this.overlayVisible = true;
     this.eventModalOpen = true;
   }
@@ -55,6 +58,10 @@ class PinnStore {
   }
 
   onCloseWindow() {
+    if (this.newEventModalOpen && !this.newEventSubmitted) {
+      this.newPinn.setMap(null);
+      this.newPinn = null;
+    }
     this.newEventModalOpen = false;
     this.eventModalOpen = false;
     this.overlayVisible = false;

@@ -63,8 +63,8 @@ class App extends Component {
           coords={this.state.newPinnCoords}
           open={this.state.newEventModalOpen} />
         <Event
-          name={this.state.openPinn.eventName}
-          desc={this.state.openPinn.eventDesc}
+          name={this.state.openPinn.eventData.eventName}
+          desc={this.state.openPinn.eventData.eventDesc}
           open={this.state.eventModalOpen} />
         <footer className='lead' style={style.footer}>
           Footer

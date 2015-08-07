@@ -27,8 +27,8 @@ class CreateEvent extends Component {
       eventName: name.trim(),
       eventDesc: desc.trim()
     };
-    PinnActions.createNewEvent(newEventData);
     PinnActions.updateNewEventSubmitted();
+    PinnActions.createNewEvent(newEventData);
   }
 
   render() {
