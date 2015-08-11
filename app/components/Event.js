@@ -31,7 +31,8 @@ class Event extends Component {
       </div>;
     return (
       <div>
-        <Overlay />
+        <Overlay
+          windowType='event' />
         <TestWindow
           open={this.props.open}
           content={content}
@@ -39,11 +40,6 @@ class Event extends Component {
       </div>
     );
   }
-}
-
-Event.defaultProps = {
-  desc: '',
-  name: ''
 }
 
 export default Event;

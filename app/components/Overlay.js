@@ -1,7 +1,6 @@
 'use strict';
 
 import React from 'react';
-import Router from 'react-router';
 
 import PinnActions from '../actions/PinnActions';
 
@@ -16,15 +15,10 @@ class Overlay extends Component {
     this.handleCloseWindow = this.handleCloseWindow.bind(this);
   }
 
-  toggleOverlay() {
-    if (this.props.visible) {
-      return 'block';
-    } else {
-      return 'none';
-    }
-  }
-
   handleCloseWindow() {
+    if (this.props.windowType === 'create-event') {
+      PinnActions.closeWindow();
+    }
     this.context.router.goBack();
   }
 

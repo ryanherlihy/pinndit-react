@@ -18,17 +18,16 @@ class CreateEvent extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit() {
-    let name = document.getElementById('new-event-name').value;
-    let desc = document.getElementById('new-event-desc').value;
+  componentDidMount() {
     document.getElementById('new-event-name').value = '';
     document.getElementById('new-event-desc').value = '';
+  }
+
+  handleSubmit() {
     let newEventData = {
-      eventCoords: this.props.coords,
-      eventName: name.trim(),
-      eventDesc: desc.trim()
+      eventName: document.getElementById('new-event-name').value.trim(),
+      eventDesc: document.getElementById('new-event-desc').value.trim()
     };
-    PinnActions.updateNewEventSubmitted();
     PinnActions.createNewEvent(newEventData);
   }
 
@@ -42,6 +41,7 @@ class CreateEvent extends Component {
               <input
                 type='text'
                 className='form-control'
+                ref='newEventName'
                 id='new-event-name'
                 placeholder='Event Name' />
             </div>
@@ -49,6 +49,7 @@ class CreateEvent extends Component {
               <label forHTML='new-event-desc'>Event Description</label>
               <textarea
                 className='form-control'
+                ref='newEventDesc'
                 id='new-event-desc'
                 rows='5'
                 placeholder='Event Description' >
@@ -60,7 +61,8 @@ class CreateEvent extends Component {
       </div>
     return (
       <div>
-        <Overlay />
+        <Overlay
+          windowType='create-event' />
         <TestWindow
           open={this.props.open}
           content={content}
@@ -69,5 +71,9 @@ class CreateEvent extends Component {
     );
   }
 }
+
+CreateEvent.contextTypes = {
+  router: React.PropTypes.func.isRequired
+};
 
 export default CreateEvent;

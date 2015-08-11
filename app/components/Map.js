@@ -1,7 +1,6 @@
 'use strict';
 
 import React from 'react';
-import Router from 'react-router';
 import CreateEvent from './CreateEvent';
 import PinnStore from '../stores/PinnStore';
 import PinnActions from '../actions/PinnActions';
@@ -58,7 +57,7 @@ class Map extends Component {
     });
 
     this.centerMapView(coords);
-    this.context.router.transitionTo('createEvent');
+    this.context.router.transitionTo('create-event');
     PinnActions.newPinnDropped(marker);
 
     google.maps.event.addListener(marker, 'click', () => {
