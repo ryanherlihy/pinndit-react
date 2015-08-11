@@ -58,10 +58,12 @@ class Map extends Component {
     });
 
     this.centerMapView(coords);
+    this.context.router.transitionTo('createEvent');
     PinnActions.newPinnDropped(marker);
 
     google.maps.event.addListener(marker, 'click', () => {
       this.centerMapView(coords);
+      this.context.router.transitionTo('event');
       PinnActions.updateOpenPinn(marker);
     })
   }
@@ -84,5 +86,9 @@ class Map extends Component {
     )
   }
 }
+
+Map.contextTypes = {
+  router: React.PropTypes.func.isRequired
+};
 
 export default Map;

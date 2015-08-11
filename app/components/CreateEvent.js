@@ -2,6 +2,7 @@
 
 import React from 'react';
 import TestWindow from './TestWindow';
+import Overlay from './Overlay';
 
 import PinnStore from '../stores/PinnStore';
 import PinnActions from '../actions/PinnActions';
@@ -58,10 +59,13 @@ class CreateEvent extends Component {
         </div>
       </div>
     return (
-      <TestWindow
-        open={this.props.open}
-        content={content}
-        heading='Create Event' />
+      <div>
+        <Overlay />
+        <TestWindow
+          open={this.props.open}
+          content={content}
+          heading='Create Event' />
+      </div>
     );
   }
 }

@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import Router from 'react-router';
 
 import PinnActions from '../actions/PinnActions';
 
@@ -9,6 +10,11 @@ const {
 } = React;
 
 class Overlay extends Component {
+  constructor(props) {
+    super(props);
+
+    this.handleCloseWindow = this.handleCloseWindow.bind(this);
+  }
 
   toggleOverlay() {
     if (this.props.visible) {
@@ -19,28 +25,20 @@ class Overlay extends Component {
   }
 
   handleCloseWindow() {
-    PinnActions.closeWindow();
+    this.context.router.goBack();
   }
 
   render() {
-    let styles = {
-      overlay: {
-        position: 'fixed',
-        top: '0',
-        left: '0',
-        width: '100%',
-        height: '100%',
-        zIndex: 5,
-        backgroundColor: 'rgba(0,0,0,0.5)',
-        display: this.toggleOverlay()
-      }
-    }
     return (
-      <div 
-        style={styles.overlay}
+      <div
+        className='overlay'
         onClick={this.handleCloseWindow}></div>
     );
   }
 }
+
+Overlay.contextTypes = {
+  router: React.PropTypes.func.isRequired
+};
 
 export default Overlay;

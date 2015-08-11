@@ -50,11 +50,7 @@ class App extends Component {
     // );
     return (
       <div id='app'>
-        <Link to='createEvent'>Create</Link>
-        <Link to='event'>Event</Link>
         <Map />
-        <Overlay
-          visible={this.state.overlayVisible} />
         <RouteHandler />
       </div>
     );
