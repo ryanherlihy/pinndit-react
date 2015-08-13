@@ -1,10 +1,9 @@
 'use strict';
 
 import React from 'react';
-import Router from 'react-router';
-import routes from '../app/config/routes.js';
+import router from '../app/config/router.js';
 
-Router.run(routes, Router.HistoryLocation, (Handler) => {
+router.run((Handler) => {
   React.render(
     <Handler />,
     document.body

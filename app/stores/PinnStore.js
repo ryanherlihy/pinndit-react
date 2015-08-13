@@ -47,8 +47,10 @@ class PinnStore {
   }
 
   onCloseWindow() {
-    this.newPinn.setMap(null);
-    this.newPinn = null;
+    if (this.newPinn) {
+      this.newPinn.setMap(null);
+      this.newPinn = null;
+    }
   }
 }
 

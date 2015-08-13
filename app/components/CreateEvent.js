@@ -18,6 +18,10 @@ class CreateEvent extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  static willTransitionFrom(transition, component) {
+    PinnActions.closeWindow();
+  }
+
   componentDidMount() {
     document.getElementById('new-event-name').value = '';
     document.getElementById('new-event-desc').value = '';

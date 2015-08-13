@@ -21,17 +21,17 @@ class App extends Component {
     this.state = PinnStore.getState();
   }
 
-  componentDidMount() {
-    PinnStore.listen((pinnData) => {
-      this.setState(pinnData);
-    });
-  }
-
-  componentWillUnount() {
-    PinnStore.unlisten((pinnData) => {
-      this.setState(pinnData);
-    });
-  }
+  // componentDidMount() {
+  //   PinnStore.listen((pinnData) => {
+  //     this.setState(pinnData);
+  //   });
+  // }
+  //
+  // componentWillUnount() {
+  //   PinnStore.unlisten((pinnData) => {
+  //     this.setState(pinnData);
+  //   });
+  // }
 
   render() {
     return (

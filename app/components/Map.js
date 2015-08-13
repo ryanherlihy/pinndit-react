@@ -23,6 +23,7 @@ class Map extends Component {
   }
 
   componentDidMount() {
+    console.log('map mount');
     PinnStore.listen((pinnData) => {
       this.setState(pinnData);
     });

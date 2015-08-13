@@ -16,10 +16,7 @@ class Overlay extends Component {
   }
 
   handleCloseWindow() {
-    if (this.props.windowType === 'create-event') {
-      PinnActions.closeWindow();
-    }
-    this.context.router.goBack();
+    this.context.router.transitionTo('/');
   }
 
   render() {
