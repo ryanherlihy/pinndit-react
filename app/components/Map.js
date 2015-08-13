@@ -20,7 +20,6 @@ class Map extends Component {
 
     this.initialize = this.initialize.bind(this);
     this.addMarker = this.addMarker.bind(this);
-    this.deleteMarker = this.deleteMarker.bind(this);
     this.centerMapView = this.centerMapView.bind(this);
   }
 
@@ -88,9 +87,5 @@ class Map extends Component {
     )
   }
 }
-
-Map.contextTypes = {
-  router: React.PropTypes.func.isRequired
-};
 
 export default Map;

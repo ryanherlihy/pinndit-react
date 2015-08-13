@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import TestWindow from './TestWindow';
+import InfoWindow from './InfoWindow';
 import Overlay from './Overlay';
 
 import PinnStore from '../stores/PinnStore';
@@ -70,7 +70,7 @@ class CreateEvent extends Component {
       <div>
         <Overlay
           windowType='create-event' />
-        <TestWindow
+        <InfoWindow
           open={this.props.open}
           content={content}
           heading='Create Event' />
