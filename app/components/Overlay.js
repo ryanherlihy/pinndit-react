@@ -18,7 +18,6 @@ class Overlay extends Component {
   }
 
   handleCloseWindow() {
-    // this.context.router.transitionTo('/');
     RouterActions.transitionTo('/');
   }
 

@@ -18,6 +18,8 @@ class Map extends Component {
     this.state = PinnStore.getState();
     this.map;
 
+    this.onChange = this.onChange.bind(this);
+
     this.initialize = this.initialize.bind(this);
     this.addMarker = this.addMarker.bind(this);
     this.centerMapView = this.centerMapView.bind(this);
@@ -25,16 +27,16 @@ class Map extends Component {
 
   componentDidMount() {
     console.log('map mount');
-    PinnStore.listen((pinnData) => {
-      this.setState(pinnData);
-    });
+    PinnStore.listen(this.onChange);
     this.initialize();
   }
 
   componentWillUnmount() {
-    PinnStore.unlisten((pinnData) => {
-      this.setState(pinnData);
-    });
+    PinnStore.unlisten(this.onChange);
+  }
+
+  onChange(state) {
+    this.setState(state);
   }
 
   initialize() {
@@ -67,11 +69,6 @@ class Map extends Component {
       PinnActions.updateOpenPinn(marker);
       RouterActions.transitionTo('event');
     })
-  }
-
-  deleteMarker(marker) {
-    marker.setMap(null);
-    marker = null;
   }
 
   centerMapView(center) {

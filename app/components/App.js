@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import { RouteHandler, Link } from 'react-router';
+import { RouteHandler } from 'react-router';
 import Map from './Map';
 
 import PinnStore from '../stores/PinnStore';

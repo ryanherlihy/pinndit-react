@@ -19,11 +19,7 @@ class PinnActions {
     this.dispatch(marker);
   }
 
-  updateNewEventSubmitted() {
-    this.dispatch();
-  }
-
-  closeWindow() {
+  closeCreateEventWindow() {
     this.dispatch();
   }
 

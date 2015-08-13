@@ -21,7 +21,7 @@ class CreateEvent extends Component {
   }
 
   static willTransitionFrom(transition, component) {
-    PinnActions.closeWindow();
+    PinnActions.closeCreateEventWindow();
   }
 
   componentDidMount() {
@@ -66,6 +66,7 @@ class CreateEvent extends Component {
           </form>
         </div>
       </div>
+
     return (
       <div>
         <Overlay
@@ -78,9 +79,5 @@ class CreateEvent extends Component {
     );
   }
 }
-
-CreateEvent.contextTypes = {
-  router: React.PropTypes.func.isRequired
-};
 
 export default CreateEvent;
