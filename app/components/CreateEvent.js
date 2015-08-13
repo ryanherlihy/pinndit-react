@@ -7,6 +7,8 @@ import Overlay from './Overlay';
 import PinnStore from '../stores/PinnStore';
 import PinnActions from '../actions/PinnActions';
 
+import RouterActions from '../actions/RouterActions';
+
 const {
   Component
 } = React;
@@ -33,6 +35,7 @@ class CreateEvent extends Component {
       eventDesc: document.getElementById('new-event-desc').value.trim()
     };
     PinnActions.createNewEvent(newEventData);
+    RouterActions.transitionTo('/');
   }
 
   render() {

@@ -7,29 +7,29 @@ import routes from './routes';
 let router;
 
 module.exports = {
-    makePath: function(to, params, query) {
-        return router.makePath(to, params, query);
-    },
+  makePath: function(to, params, query) {
+    return router.makePath(to, params, query);
+  },
 
-    makeHref: function(to, params, query) {
-        return router.makeHref(to, params, query);
-    },
+  makeHref: function(to, params, query) {
+    return router.makeHref(to, params, query);
+  },
 
-    transitionTo: function(to, params, query) {
-        router.transitionTo(to, params, query);
-    },
+  transitionTo: function(to, params, query) {
+    router.transitionTo(to, params, query);
+  },
 
-    replaceWith: function(to, params, query) {
-        router.replaceWith(to, params, query);
-    },
+  replaceWith: function(to, params, query) {
+    router.replaceWith(to, params, query);
+  },
 
-    goBack: function() {
-        router.goBack();
-    },
+  goBack: function() {
+    router.goBack();
+  },
 
-    run: function(render) {
-        router.run(render);
-    }
+  run: function(render) {
+    router.run(render);
+  }
 };
 
 router = Router.create({

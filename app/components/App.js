@@ -19,18 +19,19 @@ class App extends Component {
     super(props);
 
     this.state = PinnStore.getState();
+    // this.onChange = this.onChange.bind(this);
   }
-
+  //
   // componentDidMount() {
-  //   PinnStore.listen((pinnData) => {
-  //     this.setState(pinnData);
-  //   });
+  //   RouteStore.listen(this.onChange);
   // }
   //
   // componentWillUnount() {
-  //   PinnStore.unlisten((pinnData) => {
-  //     this.setState(pinnData);
-  //   });
+  //   RouteStore.unlisten(this.onChange);
+  // }
+  //
+  // onChange(route) {
+  //   this.context.router.transitionTo(route);
   // }
 
   render() {
@@ -42,5 +43,9 @@ class App extends Component {
     );
   }
 }
+
+// App.contextTypes = {
+//   router: React.PropTypes.func.isRequired
+// };
 
 export default App;

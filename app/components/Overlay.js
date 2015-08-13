@@ -4,6 +4,8 @@ import React from 'react';
 
 import PinnActions from '../actions/PinnActions';
 
+import RouterActions from '../actions/RouterActions';
+
 const {
   Component
 } = React;
@@ -16,7 +18,8 @@ class Overlay extends Component {
   }
 
   handleCloseWindow() {
-    this.context.router.transitionTo('/');
+    // this.context.router.transitionTo('/');
+    RouterActions.transitionTo('/');
   }
 
   render() {
