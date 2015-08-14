@@ -21,7 +21,7 @@ class PinnStore {
       }
     };
   }
-  
+
   onNewPinnDropped(marker) {
     this.newPinn = marker;
   }

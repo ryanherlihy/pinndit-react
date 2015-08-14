@@ -9,9 +9,9 @@ import router from '../config/router';
 class RouterActions {
   constructor() {}
 
-  transitionTo(route) {
-    this.dispatch(route);
-    router.transitionTo(route);
+  transitionTo(route, params) {
+    this.dispatch();
+    router.transitionTo(route, params);
   }
 
   goBack() {

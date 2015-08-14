@@ -14,6 +14,8 @@ const {
 class Event extends Component {
   constructor(props) {
     super(props);
+
+    this.state = this.props.pinn;
   }
 
   render() {
@@ -22,7 +24,7 @@ class Event extends Component {
         <div className='row'>
           <p className='lead'>Event Description</p>
           <hr></hr>
-          {this.props.desc}
+          {this.state.eventData.eventDesc}
         </div>
       </div>;
     return (
@@ -30,9 +32,8 @@ class Event extends Component {
         <Overlay
           windowType='event' />
         <InfoWindow
-          open={this.props.open}
           content={content}
-          heading={this.props.name} />
+          heading={this.state.eventData.eventName} />
       </div>
     );
   }

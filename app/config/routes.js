@@ -22,8 +22,7 @@ class EventWrapper extends Component {
   render() {
     return (
       <Event
-        name={this.state.openPinn.eventData.eventName}
-        desc={this.state.openPinn.eventData.eventDesc} />
+        pinn={this.state.openPinn} />
     );
   }
 }
@@ -31,6 +30,6 @@ class EventWrapper extends Component {
 export default (
   <Route handler={App} >
     <Route name='create-event' handler={CreateEvent} />
-    <Route name='event' handler={EventWrapper} />
+    <Route name='event' path='event/:id' handler={EventWrapper} />
   </Route>
 );

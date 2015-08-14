@@ -62,11 +62,12 @@ class Map extends Component {
     this.centerMapView(coords);
     PinnActions.newPinnDropped(marker);
     RouterActions.transitionTo('create-event');
+    console.log(marker);
 
     google.maps.event.addListener(marker, 'click', () => {
       this.centerMapView(coords);
       PinnActions.updateOpenPinn(marker);
-      RouterActions.transitionTo('event');
+      RouterActions.transitionTo('event', {id: this.state.openPinn.getPosition()});
     })
   }
 
