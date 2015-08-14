@@ -42,7 +42,8 @@ class Map extends Component {
   initialize() {
     var mapOptions = {
       center: { lat: 42.154, lng: -71.223},
-      zoom: 15
+      zoom: 15,
+      disableDefaultUI: true
     };
 
     this.map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
@@ -56,7 +57,6 @@ class Map extends Component {
     let marker = new google.maps.Marker({
       position: coords,
       map: this.map,
-      title: 'New Marker',
     });
 
     this.centerMapView(coords);
