@@ -40,6 +40,33 @@ html {
   background-color: rgba(0,0,0,0.5);
 }
 
+.event-window {
+  background-color: #ffffff;
+  border-radius: 5px;
+  position: fixed;
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  margin-bottom: 15px;
+  box-shadow: 0px 5px 5px grey;
+  z-index: 5;
+}
+
+.event-window-heading {
+  background-color: #E84C3D;
+  padding: 15px;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+  color: #ffffff;
+}
+
+.event-window-body {
+  padding: 15px;
+}
+
+.panel {
+}
+
 .panel-heading {
   background-color: #E84C3D;
 }

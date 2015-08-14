@@ -3,6 +3,7 @@
 import React from 'react';
 import InfoWindow from './InfoWindow';
 import Overlay from './Overlay';
+import Comments from './Comments';
 
 import PinnStore from '../stores/PinnStore';
 import PinnActions from '../actions/PinnActions';
@@ -34,6 +35,8 @@ class Event extends Component {
         <InfoWindow
           content={content}
           heading={this.state.eventData.eventName} />
+        <Comments
+          comments={{comments: []}} />
       </div>
     );
   }
