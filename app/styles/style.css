@@ -1,5 +1,6 @@
 body.pinndit {
-  font: 14px, Helvetica, "Lucida Grande", Arial, sans-serif;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  font-size: 36;
   background-color: #565050;
   height: 100%;
   padding-left: 5%;
@@ -19,6 +20,11 @@ footer {
 
 html {
   height: 100%;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
 }
 
 #app {
@@ -62,6 +68,20 @@ html {
 
 .event-window-body {
   padding: 15px;
+}
+
+.event-comment {
+  list-style-type: none;
+  border-bottom-style: solid;
+  border-bottom-width: thin;
+  border-bottom-color: #bbbbbb;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.section-head {
+  color: #aaaaaa;
+  font-size: 32;
 }
 
 .panel {

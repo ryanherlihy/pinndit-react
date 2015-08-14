@@ -11,6 +11,7 @@ class Comments extends Component {
     super(props);
 
     this.state = this.props.comments;
+    this.handleCommentSubmit = this.handleCommentSubmit.bind(this);
   }
 
   componentWillMount() {
@@ -19,10 +20,12 @@ class Comments extends Component {
     }
   }
 
-  handleCommentSubmit(e) {
-    e.preventDefault();
+  handleCommentSubmit() {
+    let newComment = this.refs.commentBox.getDOMNode().value;
 
-    this.setState(this.setState.comments.concat([e.target.value]));
+    this.setState({
+      comments: this.state.comments.concat([newComment])
+    })
   }
 
   render() {
@@ -38,15 +41,23 @@ class Comments extends Component {
     };
 
     let comments = this.state.comments.map((comment, index) => {
-      return <li key={index}>{comment}</li>
+      return (
+        <li
+          className='event-comment'
+          key={index}>
+          User{Math.ceil(Math.random()*1000)}: {comment}
+        </li>
+      )
     });
-
+    console.log(comments, this.state.comments);
     return (
-      <div className='panel panel-default' style={styles.win}>
-        <div className='panel-heading'>
+      <div className='event-window' style={styles.win}>
+        <div className='event-window-heading'>
           <input type='text' ref='commentBox' />
+          <button className='btn btn-danger' onClick={this.handleCommentSubmit}>Post</button>
         </div>
-        <div className='panel-body'>
+        <div className='event-window-body'>
+          <p className='section-head'>Comments {comments.length}</p>
           <ul className='comments-list'>
             {comments}
           </ul>

@@ -21,7 +21,7 @@ class InfoWindow extends Component {
     };
     return (
       <div className='event-window' style={styles.win}>
-        <div className='event-window-heading lead'>{this.props.heading}</div>
+        <div className='event-window-heading'>{this.props.heading}</div>
         <div className='event-window-body'>
           {this.props.content}
         </div>
