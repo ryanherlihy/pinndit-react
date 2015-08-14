@@ -1,27 +1,32 @@
-body {
+body.pinndit {
   font: 14px, Helvetica, "Lucida Grande", Arial, sans-serif;
   background-color: #565050;
+  height: 100%;
   padding-left: 5%;
   padding-right: 5%;
-  padding-top: 5%;
 }
 
 header {
   background-color: #565050;
-  height: 5%;
+  height: 100px;
 }
 
-footer{
-  color: #000000;
+footer {
+  color: #ffffff;
   font-size: smaller;
+  text-align: center;
 }
 
-html, body, #app {
+html {
   height: 100%;
 }
 
+#app {
+  height: 70%;
+}
+
 #map-canvas {
-  height: 90%;
+  height: 100%;
   border-radius: 5px;
 }
 
@@ -33,4 +38,12 @@ html, body, #app {
   height: 100%;
   z-index: 5;
   background-color: rgba(0,0,0,0.5);
+}
+
+.window-header {
+  background-color: #E84C3D;
+}
+
+.panel-heading {
+  background-color: #E84C3D;
 }
