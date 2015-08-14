@@ -51,11 +51,17 @@ class Comments extends Component {
     });
     console.log(comments, this.state.comments);
     return (
-      <div className='event-window' style={styles.win}>
-        <div className='event-window-heading'>
+      <div>
+        <div className='comments-heading'>
           <div className='comment-post'>
-            <input type='text' ref='commentBox' />
-            <button className='button-comment-post' onClick={this.handleCommentSubmit}>Post</button>
+            <input
+              type='text'
+              ref='commentBox'
+              placeholder='Enter Comment' />
+            <button
+              className='button-comment-post'
+              onClick={this.handleCommentSubmit}
+              >Post</button>
           </div>
         </div>
         <div className='event-window-body'>

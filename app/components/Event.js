@@ -23,20 +23,19 @@ class Event extends Component {
     let content =
       <div className='container-fluid'>
         <div className='row'>
-          <p className='lead'>Event Description</p>
-          <hr></hr>
-          {this.state.eventData.eventDesc}
+          <div className='section-head'>Event Description</div>
+          <p>{this.state.eventData.eventDesc}</p>
         </div>
       </div>;
+
     return (
       <div>
         <Overlay
           windowType='event' />
         <InfoWindow
+          comments={<Comments comments={{comments: []}} />}
           content={content}
           heading={this.state.eventData.eventName} />
-        <Comments
-          comments={{comments: []}} />
       </div>
     );
   }

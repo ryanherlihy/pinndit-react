@@ -14,8 +14,9 @@ header {
 
 footer {
   color: #ffffff;
-  font-size: smaller;
+  font-size: 12px;
   text-align: center;
+  margin: 20px;
 }
 
 html {
@@ -48,7 +49,6 @@ input {
   font-family: inherit;
   font-size: 18px;
   padding: 7px;
-  margin-bottom: 10px;
   border-radius: 5px;
   border-style: solid;
   border-color: #d82010;
@@ -80,6 +80,11 @@ label {
   padding-bottom: 10px;
 }
 
+p {
+  font-size: 22px;
+  margin: 15px;
+}
+
 #app {
   height: 70%;
 }
@@ -103,7 +108,7 @@ label {
   background-color: #ffffff;
   border-radius: 5px;
   position: fixed;
-  top: 25%;
+  top: 20%;
   left: 25%;
   width: 50%;
   margin-bottom: 15px;
@@ -141,6 +146,11 @@ label {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #E84C3D;
+}
+
+.comments-heading {
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .comment-post {
