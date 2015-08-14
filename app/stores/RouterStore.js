@@ -8,16 +8,18 @@ import PinnStore from './PinnStore';
 class RouteStore {
   constructor() {
     this.bindListeners({
-      onTransitionTo: RouterActions.TRANSITION_TO
+      onTransitionTo: RouterActions.TRANSITION_TO,
+      onGoBack: RouterActions.GO_BACK
     });
-
-    this.currentRoute = '/';
   }
 
   onTransitionTo() {
     this.waitFor(PinnStore);
   }
 
+  onGoBack() {
+    this.waitFor(PinnStore);
+  }
 }
 
 export default alt.createStore(RouteStore);

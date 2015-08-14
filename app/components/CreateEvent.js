@@ -35,7 +35,7 @@ class CreateEvent extends Component {
       eventDesc: document.getElementById('new-event-desc').value.trim()
     };
     PinnActions.createNewEvent(newEventData);
-    RouterActions.transitionTo('/');
+    RouterActions.goBack();
   }
 
   render() {

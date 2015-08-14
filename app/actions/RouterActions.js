@@ -14,6 +14,11 @@ class RouterActions {
     router.transitionTo(route);
   }
 
+  goBack() {
+    this.dispatch();
+    router.goBack();
+  }
+
   run() {
     router.run((Handler) => {
       React.render(

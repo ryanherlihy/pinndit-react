@@ -17,7 +17,7 @@ class Overlay extends Component {
   }
 
   handleCloseWindow() {
-    RouterActions.transitionTo('/');
+    RouterActions.goBack();
   }
 
   render() {
