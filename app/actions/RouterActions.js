@@ -6,8 +6,6 @@ import React from 'react';
 
 import router from '../config/router';
 
-console.log(router);
-
 class RouterActions {
   constructor() {}
 

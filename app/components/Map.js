@@ -40,7 +40,6 @@ class Map extends Component {
   }
 
   initialize() {
-    var myLatlng = new google.maps.LatLng(42.154, -71.223);
     var mapOptions = {
       center: { lat: 42.154, lng: -71.223},
       zoom: 15

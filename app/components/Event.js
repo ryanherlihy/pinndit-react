@@ -16,10 +16,6 @@ class Event extends Component {
     super(props);
   }
 
-  componentWillReceiveProps(props) {
-    console.log(props);
-  }
-
   render() {
     let content =
       <div className='container-fluid'>

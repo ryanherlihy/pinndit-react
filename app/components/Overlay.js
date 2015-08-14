@@ -14,7 +14,6 @@ class Overlay extends Component {
   constructor(props) {
     super(props);
 
-    this.handleCloseWindow = this.handleCloseWindow.bind(this);
   }
 
   handleCloseWindow() {
@@ -29,9 +28,5 @@ class Overlay extends Component {
     );
   }
 }
-
-Overlay.contextTypes = {
-  router: React.PropTypes.func.isRequired
-};
 
 export default Overlay;
