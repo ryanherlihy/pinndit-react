@@ -53,11 +53,13 @@ class Comments extends Component {
     return (
       <div className='event-window' style={styles.win}>
         <div className='event-window-heading'>
-          <input type='text' ref='commentBox' />
-          <button className='btn btn-danger' onClick={this.handleCommentSubmit}>Post</button>
+          <div className='comment-post'>
+            <input type='text' ref='commentBox' />
+            <button className='button-comment-post' onClick={this.handleCommentSubmit}>Post</button>
+          </div>
         </div>
         <div className='event-window-body'>
-          <p className='section-head'>Comments {comments.length}</p>
+          <div className='section-head'>Comments {comments.length}</div>
           <ul className='comments-list'>
             {comments}
           </ul>
