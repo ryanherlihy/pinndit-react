@@ -34,8 +34,11 @@ class CreateEvent extends Component {
       eventName: document.getElementById('new-event-name').value.trim(),
       eventDesc: document.getElementById('new-event-desc').value.trim()
     };
-    PinnActions.createNewEvent(newEventData);
-    RouterActions.goBack();
+
+    if (document.getElementById('new-event-name').value) {
+      PinnActions.createNewEvent(newEventData);
+      RouterActions.goBack();
+    }
   }
 
   render() {

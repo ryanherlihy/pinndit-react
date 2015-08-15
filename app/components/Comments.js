@@ -52,8 +52,9 @@ class Comments extends Component {
     console.log(comments, this.state.comments);
     return (
       <div>
-        <div className='comments-heading'>
-          <div className='comment-post'>
+        <div className='event-window-body'>
+          <div className='comments-section-head'>Comments {comments.length}</div>
+          <div className='comments-heading'>
             <input
               type='text'
               ref='commentBox'
@@ -63,9 +64,6 @@ class Comments extends Component {
               onClick={this.handleCommentSubmit}
               >Post</button>
           </div>
-        </div>
-        <div className='event-window-body'>
-          <div className='section-head'>Comments {comments.length}</div>
           <ul className='comments-list'>
             {comments}
           </ul>
