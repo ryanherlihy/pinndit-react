@@ -34,8 +34,11 @@ class CreateEvent extends Component {
       eventName: document.getElementById('new-event-name').value.trim(),
       eventDesc: document.getElementById('new-event-desc').value.trim()
     };
-    PinnActions.createNewEvent(newEventData);
-    RouterActions.goBack();
+
+    if (document.getElementById('new-event-name').value) {
+      PinnActions.createNewEvent(newEventData);
+      RouterActions.goBack();
+    }
   }
 
   render() {
@@ -43,25 +46,17 @@ class CreateEvent extends Component {
       <div className='container-fluid'>
         <div className='row'>
           <form>
-            <div className='form-group'>
-              <label forHTML='new-event-name'>Event Name</label>
-              <input
-                type='text'
-                className='form-control'
-                ref='newEventName'
-                id='new-event-name'
-                placeholder='Event Name' />
-            </div>
-            <div className='form-group'>
-              <label forHTML='new-event-desc'>Event Description</label>
-              <textarea
-                className='form-control'
-                ref='newEventDesc'
-                id='new-event-desc'
-                rows='5'
-                placeholder='Event Description' >
-              </textarea>
-            </div>
+            <input
+              type='text'
+              ref='newEventName'
+              id='new-event-name'
+              placeholder='Event Name' />
+            <textarea
+              ref='newEventDesc'
+              id='new-event-desc'
+              rows='5'
+              placeholder='Event Description' >
+            </textarea>
             <button type='button' className='btn btn-danger' onClick={this.handleSubmit}>Create Event</button>
           </form>
         </div>

@@ -2,6 +2,8 @@
 
 import React from 'react';
 
+import Comments from './Comments';
+
 const {
   Component
 } = React;
@@ -9,21 +11,14 @@ const {
 class InfoWindow extends Component {
 
   render() {
-    let styles = {
-      win: {
-        position: 'fixed',
-        top: '25%',
-        left: '25%',
-        width: '50%',
-        boxShadow: '0px 5px 5px grey',
-        zIndex: 5
-      }
-    };
     return (
-      <div className='panel panel-default' style={styles.win}>
-        <div className='panel-heading lead'>{this.props.heading}</div>
-        <div className='panel-body'>
+      <div className='event-window'>
+        <div className='event-window-heading'>{this.props.heading}</div>
+        <div className='event-window-body'>
           {this.props.content}
+        </div>
+        <div className='event-window-comments'>
+          {this.props.comments}
         </div>
       </div>
     );

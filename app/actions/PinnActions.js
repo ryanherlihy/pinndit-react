@@ -23,6 +23,10 @@ class PinnActions {
     this.dispatch();
   }
 
+  addComment(comment) {
+    this.dispatch(comment);
+  }
+
 }
 
 export default alt.createActions(PinnActions);
