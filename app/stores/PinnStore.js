@@ -10,6 +10,7 @@ class PinnStore {
       onUpdateOpenPinn: PinnActions.UPDATE_OPEN_PINN,
       onNewPinnDropped: PinnActions.NEW_PINN_DROPPED,
       onCloseCreateEventWindow: PinnActions.CLOSE_CREATE_EVENT_WINDOW,
+      onAddComment: PinnActions.ADD_COMMENT
     });
 
     this.pinns = [];
@@ -17,7 +18,8 @@ class PinnStore {
     this.openPinn = {
       eventData: {
         eventName: '',
-        eventDesc: ''
+        eventDesc: '',
+        eventComments: []
       }
     };
   }
@@ -28,6 +30,7 @@ class PinnStore {
 
   onCreateNewEvent(eventData) {
     this.newPinn.eventData = eventData;
+    this.newPinn.eventData.eventComments = [];
     this.pinns.push(this.newPinn);
     this.newPinn = null;
   }
@@ -41,6 +44,10 @@ class PinnStore {
       this.newPinn.setMap(null);
       this.newPinn = null;
     }
+  }
+
+  onAddComment(comment) {
+    this.openPinn.eventData.eventComments = this.openPinn.eventData.eventComments.concat([comment]);
   }
 }
 

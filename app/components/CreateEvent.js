@@ -46,13 +46,11 @@ class CreateEvent extends Component {
       <div className='container-fluid'>
         <div className='row'>
           <form>
-            <label forHTML='new-event-name'>Event Name</label>
             <input
               type='text'
               ref='newEventName'
               id='new-event-name'
               placeholder='Event Name' />
-            <label forHTML='new-event-desc'>Event Description</label>
             <textarea
               ref='newEventDesc'
               id='new-event-desc'
