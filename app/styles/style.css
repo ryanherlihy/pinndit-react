@@ -9,11 +9,12 @@ body.pinndit {
 
 header {
   background-color: #565050;
-  height: 100px;
+  max-height: 20%;
 }
 
 footer {
   color: #ffffff;
+  max-height: 10%;
   font-size: 12px;
   text-align: center;
   margin: 20px;
@@ -23,10 +24,13 @@ html {
   height: 100%;
 }
 
-ul {
+ul.comments-list {
   list-style: none;
   padding-left: 0;
   margin-top: 10px;
+  margin-bottom: 20px;
+  max-height: 175px;
+  overflow-y: scroll;
 }
 
 button {
@@ -97,13 +101,20 @@ p {
   margin: 15px;
 }
 
-#app {
+#content {
   height: 70%;
+}
+
+#app {
+  height: 100%;
 }
 
 #map-canvas {
   height: 100%;
   border-radius: 5px;
+}
+
+.window-overlay {
 }
 
 .overlay {
@@ -123,7 +134,7 @@ p {
   top: 20%;
   left: 25%;
   width: 50%;
-  min-height: 260px;
+  min-height: 333px;
   max-height: 60%;
   margin-bottom: 15px;
   box-shadow: 0px 5px 5px grey;
@@ -139,9 +150,8 @@ p {
 }
 
 .event-window-body {
+  background-color: #ffffff;
   padding: 15px;
-  height: 20%;
-  overflow-y: scroll;
 }
 
 .event-comment {
@@ -195,9 +205,9 @@ p {
 
 .pinn-control {
   width: 50px;
-  margin: 10px;
+  margin: 15px;
   border-style: solid;
-  border-radius: 5px;
+  border-radius: 10px;
   border-color: #E84C3D;
   background-color: rgba(255, 255, 255, 0.5);
 }

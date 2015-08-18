@@ -59,7 +59,7 @@ class CreateEvent extends Component {
       </form>
 
     return (
-      <div>
+      <div className='window-overlay'>
         <Overlay
           windowType='create-event' />
         <InfoWindow

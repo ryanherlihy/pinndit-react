@@ -47,7 +47,7 @@ class Event extends Component {
       </div>;
 
     return (
-      <div>
+      <div className='window-overlay'>
         <Overlay
           windowType='event' />
         <InfoWindow
