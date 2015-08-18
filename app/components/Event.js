@@ -42,10 +42,10 @@ class Event extends Component {
       <div className='container-fluid'>
         <div className='row'>
           <div className='section-head'>Event Description</div>
-          <p>{this.state.eventData.eventDesc}</p>
+          <p>{this.state.eventData.eventDesc ? this.state.eventData.eventDesc : 'No Description'}</p>
         </div>
       </div>;
-      
+
     return (
       <div>
         <Overlay

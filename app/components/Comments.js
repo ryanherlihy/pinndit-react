@@ -38,6 +38,7 @@ class Comments extends Component {
           <div className='comments-section-head'>Comments {comments.length}</div>
           <div className='comments-heading'>
             <input
+              className='input-comment'
               type='text'
               ref='commentBox'
               placeholder='Enter Comment' />

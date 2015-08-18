@@ -43,24 +43,20 @@ class CreateEvent extends Component {
 
   render() {
     let content =
-      <div className='container-fluid'>
-        <div className='row'>
-          <form>
-            <input
-              type='text'
-              ref='newEventName'
-              id='new-event-name'
-              placeholder='Event Name' />
-            <textarea
-              ref='newEventDesc'
-              id='new-event-desc'
-              rows='5'
-              placeholder='Event Description' >
-            </textarea>
-            <button type='button' className='btn btn-danger' onClick={this.handleSubmit}>Create Event</button>
-          </form>
-        </div>
-      </div>
+      <form>
+        <input
+          type='text'
+          ref='newEventName'
+          id='new-event-name'
+          placeholder='Event Name' />
+        <textarea
+          ref='newEventDesc'
+          id='new-event-desc'
+          rows='5'
+          placeholder='Event Description' >
+        </textarea>
+        <button type='button' className='btn btn-danger' onClick={this.handleSubmit}>Create Event</button>
+      </form>
 
     return (
       <div>
