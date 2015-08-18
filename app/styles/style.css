@@ -193,6 +193,15 @@ p {
   display: table-cell;
 }
 
+.pinn-control {
+  width: 50px;
+  margin: 10px;
+  border-style: solid;
+  border-radius: 5px;
+  border-color: #E84C3D;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
 .panel {
 }
 

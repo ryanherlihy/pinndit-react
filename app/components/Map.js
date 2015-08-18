@@ -23,6 +23,7 @@ class Map extends Component {
     this.initialize = this.initialize.bind(this);
     this.addMarker = this.addMarker.bind(this);
     this.centerMapView = this.centerMapView.bind(this);
+    this.drop = this.drop.bind(this);
   }
 
   componentDidMount() {
@@ -48,9 +49,37 @@ class Map extends Component {
 
     this.map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
+    let pinnControl = document.createElement('div');
+    let pinnImage = document.createElement('img');
+    pinnImage.src = '../../app/images/pinn.png';
+    pinnImage.className = 'pinn-control';
+    pinnImage.draggable = true;
+    pinnImage.ondragstart = this.drag;
+    pinnControl.appendChild(pinnImage);
+    this.map.controls[google.maps.ControlPosition.TOP_RIGHT].push(pinnControl);
+
     google.maps.event.addListener(this.map, 'click', (e) => {
       this.addMarker(e.latLng);
     })
+
+    google.maps.event.addListener(this.map, 'dragend', (e) => {
+      console.log(e);
+    })
+  }
+
+  drag(e) {
+    e.dataTransfer.setData('text', 'pinn');
+  }
+
+  drop(e) {
+    e.preventDefault();
+    console.log(this.map.getBounds());
+    console.log(e.clientX);
+    console.log(this.map.getProjection().fromLatLngToPoint());
+  }
+
+  allowDrop(e) {
+    e.preventDefault();
   }
 
   addMarker(coords) {
@@ -78,7 +107,9 @@ class Map extends Component {
   render() {
     return (
       <div
-        id='map-canvas' >
+        id='map-canvas'
+        onDrop={this.drop}
+        onDragOver={this.allowDrop} >
       </div>
     )
   }
