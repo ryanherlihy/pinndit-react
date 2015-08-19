@@ -10,9 +10,13 @@ const {
 
 class InfoWindow extends Component {
 
+  handleClick(e) {
+    e.stopPropagation();
+  }
+
   render() {
     return (
-      <div className='event-window'>
+      <div className='event-window' onClick={this.handleClick}>
         <div className='event-window-heading'>{this.props.heading}</div>
         <div className='event-window-body'>
           {this.props.content}

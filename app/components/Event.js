@@ -37,6 +37,10 @@ class Event extends Component {
     PinnActions.addComment(comment);
   }
 
+  handleCloseWindow() {
+    RouterActions.goBack();
+  }
+
   render() {
     let content =
       <div className='container-fluid'>
@@ -47,9 +51,7 @@ class Event extends Component {
       </div>;
 
     return (
-      <div className='window-overlay'>
-        <Overlay
-          windowType='event' />
+      <div className='overlay' onClick={this.handleCloseWindow}>
         <InfoWindow
           comments={
             <Comments

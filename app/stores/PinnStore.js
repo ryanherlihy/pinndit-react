@@ -47,7 +47,7 @@ class PinnStore {
   }
 
   onAddComment(comment) {
-    this.openPinn.eventData.eventComments = this.openPinn.eventData.eventComments.concat([comment]);
+    this.openPinn.eventData.eventComments = [comment].concat(this.openPinn.eventData.eventComments);
   }
 }
 
