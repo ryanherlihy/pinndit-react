@@ -23,7 +23,7 @@ class RouterActions {
     router.run((Handler) => {
       React.render(
         <Handler />,
-        document.body
+        document.getElementById('content')
       );
     });
   }

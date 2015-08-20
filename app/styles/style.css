@@ -3,8 +3,8 @@ body.pinndit {
   font-size: 36px;
   background-color: #565050;
   height: 100%;
-  padding-left: 5%;
-  padding-right: 5%;
+  margin: 0px;
+  overflow-y: hidden;
 }
 
 header {
@@ -14,6 +14,7 @@ header {
 
 footer {
   color: #ffffff;
+  height: 65px;
   font-size: 12px;
   text-align: center;
   margin: 20px;
@@ -23,10 +24,13 @@ html {
   height: 100%;
 }
 
-ul {
+ul.comments-list {
   list-style: none;
   padding-left: 0;
   margin-top: 10px;
+  margin-bottom: 20px;
+  max-height: 175px;
+  overflow-y: scroll;
 }
 
 button {
@@ -36,12 +40,24 @@ button {
   padding-bottom: 5px;
   padding-left: 10px;
   padding-right: 10px;
-  border-radius: 5px;
+  border-radius: 2px;
   border-style: solid;
-  border-color: #d82010;
+  border-color: #E84C3D;
   background-color: #E84C3D;
   color: #ffffff;
   box-sizing: border-box;
+}
+
+button:hover {
+  background-color: #E86C5D;
+}
+
+button:active {
+  background-color: #E82C1D;
+}
+
+button:focus {
+  outline: 0;
 }
 
 form {
@@ -58,7 +74,7 @@ input {
   border: 0;
   border-bottom-width: 2px;
   border-bottom-style: solid;
-  border-bottom-color: #d82010;
+  border-bottom-color: #E84C3D;
   vertical-align: middle;
   box-sizing: border-box;
 }
@@ -72,8 +88,9 @@ textarea {
   margin-top: 10px;
   margin-bottom: 10px;
   border-radius: 5px;
+  border-width: thin;
   border-style: solid;
-  border-color: #d82010;
+  border-color: #E84C3D;
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
   box-sizing: border-box;
   vertical-align: middle;
@@ -97,21 +114,27 @@ p {
   margin: 15px;
 }
 
+#content {
+  position:relative;
+  height: 75%;
+}
+
 #app {
-  height: 70%;
+  height: 100%;
 }
 
 #map-canvas {
   height: 100%;
-  border-radius: 5px;
 }
 
 .overlay {
   position: fixed;
+  display: flex;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  overflow-y: auto;
   z-index: 5;
   background-color: rgba(0,0,0,0.5);
 }
@@ -119,15 +142,13 @@ p {
 .event-window {
   background-color: #ffffff;
   border-radius: 5px;
-  position: fixed;
+  position: relative;
   top: 20%;
   left: 25%;
   width: 50%;
-  min-height: 260px;
-  max-height: 60%;
-  margin-bottom: 15px;
-  box-shadow: 0px 5px 5px grey;
-  z-index: 5;
+  max-height: 333px;
+  /*box-shadow: 0px 5px 5px grey;*/
+  z-index: 10;
 }
 
 .event-window-heading {
@@ -139,9 +160,8 @@ p {
 }
 
 .event-window-body {
+  background-color: #ffffff;
   padding: 15px;
-  height: 20%;
-  overflow-y: scroll;
 }
 
 .event-comment {
@@ -159,9 +179,6 @@ p {
   color: #aaaaaa;
   font-size: 22px;
   padding-bottom: 10px;
-  /*border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #E84C3D;*/
 }
 
 .section-head {
@@ -191,6 +208,15 @@ p {
 .button-comment-post {
   float: right;
   display: table-cell;
+}
+
+.pinn-control {
+  width: 50px;
+  margin: 15px;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: #E84C3D;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .panel {

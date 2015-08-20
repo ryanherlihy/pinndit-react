@@ -35,7 +35,7 @@ class Comments extends Component {
     return (
       <div>
         <div className='event-window-body'>
-          <div className='comments-section-head'>Comments {comments.length}</div>
+          <div className='comments-section-head'>{comments.length} Comments</div>
           <div className='comments-heading'>
             <input
               className='input-comment'

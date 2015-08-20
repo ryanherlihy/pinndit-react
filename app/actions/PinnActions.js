@@ -27,6 +27,10 @@ class PinnActions {
     this.dispatch(comment);
   }
 
+  checkPinnTimeout() {
+    this.dispatch();
+  }
+
 }
 
 export default alt.createActions(PinnActions);

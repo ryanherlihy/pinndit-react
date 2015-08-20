@@ -12,8 +12,8 @@ const {
 } = React;
 
 class Map extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = PinnStore.getState();
     this.map;
@@ -47,6 +47,14 @@ class Map extends Component {
     };
 
     this.map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+    let pinnControl = document.createElement('div');
+    let pinnImage = document.createElement('img');
+    pinnImage.src = '../../app/images/pinn.png';
+    pinnImage.className = 'pinn-control';
+    pinnImage.draggable = false;
+    pinnControl.appendChild(pinnImage);
+    this.map.controls[google.maps.ControlPosition.TOP_RIGHT].push(pinnControl);
 
     google.maps.event.addListener(this.map, 'click', (e) => {
       this.addMarker(e.latLng);

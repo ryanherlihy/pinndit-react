@@ -8,6 +8,8 @@ import Comments from './Comments';
 import PinnStore from '../stores/PinnStore';
 import PinnActions from '../actions/PinnActions';
 
+import RouterActions from '../actions/RouterActions';
+
 const {
   Component
 } = React;
@@ -37,6 +39,11 @@ class Event extends Component {
     PinnActions.addComment(comment);
   }
 
+  handleCloseWindow() {
+    RouterActions.goBack();
+    // PinnActions.checkPinnTimeout();
+  }
+
   render() {
     let content =
       <div className='container-fluid'>
@@ -47,9 +54,7 @@ class Event extends Component {
       </div>;
 
     return (
-      <div>
-        <Overlay
-          windowType='event' />
+      <div className='overlay' onClick={this.handleCloseWindow}>
         <InfoWindow
           comments={
             <Comments

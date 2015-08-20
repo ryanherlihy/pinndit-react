@@ -41,6 +41,11 @@ class CreateEvent extends Component {
     }
   }
 
+  handleCloseWindow() {
+    RouterActions.goBack();
+    // PinnActions.checkPinnTimeout();
+  }
+
   render() {
     let content =
       <form>
@@ -59,9 +64,7 @@ class CreateEvent extends Component {
       </form>
 
     return (
-      <div>
-        <Overlay
-          windowType='create-event' />
+      <div className='overlay' onClick={this.handleCloseWindow}>
         <InfoWindow
           open={this.props.open}
           content={content}

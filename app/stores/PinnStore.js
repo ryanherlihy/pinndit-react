@@ -10,7 +10,8 @@ class PinnStore {
       onUpdateOpenPinn: PinnActions.UPDATE_OPEN_PINN,
       onNewPinnDropped: PinnActions.NEW_PINN_DROPPED,
       onCloseCreateEventWindow: PinnActions.CLOSE_CREATE_EVENT_WINDOW,
-      onAddComment: PinnActions.ADD_COMMENT
+      onAddComment: PinnActions.ADD_COMMENT,
+      onCheckPinnTimeout: PinnActions.CHECK_PINN_TIMEOUT
     });
 
     this.pinns = [];
@@ -19,7 +20,7 @@ class PinnStore {
       eventData: {
         eventName: '',
         eventDesc: '',
-        eventComments: []
+        eventComments: [],
       }
     };
   }
@@ -31,6 +32,7 @@ class PinnStore {
   onCreateNewEvent(eventData) {
     this.newPinn.eventData = eventData;
     this.newPinn.eventData.eventComments = [];
+    this.newPinn.eventData.dropTime = Date.now();
     this.pinns.push(this.newPinn);
     this.newPinn = null;
   }
@@ -47,7 +49,21 @@ class PinnStore {
   }
 
   onAddComment(comment) {
-    this.openPinn.eventData.eventComments = this.openPinn.eventData.eventComments.concat([comment]);
+    this.openPinn.eventData.eventComments = [comment].concat(this.openPinn.eventData.eventComments);
+  }
+
+  onCheckPinnTimeout() {
+    if (this.openPinn) {
+      let pinnAge = Date.now() - this.openPinn.eventData.dropTime;
+      console.log(pinnAge, this.pinns);
+      if (pinnAge > 4000) {
+        this.pinns = this.pinns.filter((pinn) => {
+          return pinn.getPosition() !== this.openPinn.getPosition();
+        });
+        this.openPinn.setMap(null);
+        this.openPinn = null;
+      }
+    }
   }
 }
 
