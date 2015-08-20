@@ -43,6 +43,7 @@ class CreateEvent extends Component {
 
   handleCloseWindow() {
     RouterActions.goBack();
+    // PinnActions.checkPinnTimeout();
   }
 
   render() {

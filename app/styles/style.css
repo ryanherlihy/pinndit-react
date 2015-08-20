@@ -9,12 +9,12 @@ body.pinndit {
 
 header {
   background-color: #565050;
-  height: 15%;
+  height: 100px;
 }
 
 footer {
   color: #ffffff;
-  max-height: 10%;
+  height: 65px;
   font-size: 12px;
   text-align: center;
   margin: 20px;
@@ -40,12 +40,24 @@ button {
   padding-bottom: 5px;
   padding-left: 10px;
   padding-right: 10px;
-  border-radius: 5px;
+  border-radius: 2px;
   border-style: solid;
-  border-color: #d82010;
+  border-color: #E84C3D;
   background-color: #E84C3D;
   color: #ffffff;
   box-sizing: border-box;
+}
+
+button:hover {
+  background-color: #E86C5D;
+}
+
+button:active {
+  background-color: #E82C1D;
+}
+
+button:focus {
+  outline: 0;
 }
 
 form {

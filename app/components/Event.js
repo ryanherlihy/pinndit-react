@@ -8,6 +8,8 @@ import Comments from './Comments';
 import PinnStore from '../stores/PinnStore';
 import PinnActions from '../actions/PinnActions';
 
+import RouterActions from '../actions/RouterActions';
+
 const {
   Component
 } = React;
@@ -39,6 +41,7 @@ class Event extends Component {
 
   handleCloseWindow() {
     RouterActions.goBack();
+    // PinnActions.checkPinnTimeout();
   }
 
   render() {
