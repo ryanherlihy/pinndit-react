@@ -1,14 +1,15 @@
 body.pinndit {
   font-family: 'Alegreya Sans SC', sans-serif;
   font-size: 36px;
-  background-color: #565050;
+  background-color: #727272;
   height: 100%;
   margin: 0px;
   overflow-y: hidden;
 }
 
 header {
-  background-color: #565050;
+  /*background-color: #565050;*/
+  background-color: #727272;
   height: 100px;
 }
 
@@ -43,17 +44,17 @@ button {
   border-radius: 2px;
   border-style: solid;
   border-color: #E84C3D;
-  background-color: #E84C3D;
+  background-color: #F44336;
   color: #ffffff;
   box-sizing: border-box;
 }
 
 button:hover {
-  background-color: #E86C5D;
+  background-color: #D32F2F;
 }
 
 button:active {
-  background-color: #E82C1D;
+  background-color: #FFCDD2;
 }
 
 button:focus {

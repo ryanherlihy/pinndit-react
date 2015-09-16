@@ -14,6 +14,8 @@ class PinnStore {
       onCheckPinnTimeout: PinnActions.CHECK_PINN_TIMEOUT
     });
 
+
+
     this.pinns = [];
     this.newPinn;
     this.openPinn = {
